@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact — Food Corner</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container">
+      <a href="index.html" class="logo"><img src="images/logo-480w.jpg" alt="Food Corner logo" class="logo-img" /></a>
+      <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">☰</button>
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="menu.html">Menu</a>
+        <a href="about.html">About</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="contact.html" aria-current="page">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="section">
+      <div class="container contact-layout">
+        <div>
+          <p class="eyebrow">Get in touch</p>
+          <h1>Questions, orders, catering</h1>
+          <p>Drop us a message and we'll get back to you within a day. For same-day orders, calling ahead is fastest.</p>
+          <dl class="facts">
+            <div>
+              <dt>Call</dt>
+              <dd>+2712 815 8533</dd>
+            </div>
+            <div>
+              <dt>Visit</dt>
+              <dd>20071 Khulhutshwane St, 0208, Garankuwa</dd>
+            </div>
+          </dl>
+        </div>
+
+        <form>
+          <div class="form-field">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" required />
+          </div>
+          <div class="form-field">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required />
+          </div>
+          <div class="form-field">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="5" required></textarea>
+          </div>
+          <button type="submit" class="btn">Send message</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div>
+        <p class="logo"><img src="images/logo-480w.jpg" alt="Food Corner logo" class="logo-img logo-img--footer" /></p>
+        <p>7 Market Street, Garankuwa</p>
+      </div>
+      <nav>
+        <a href="index.html">Home</a> &nbsp;·&nbsp;
+        <a href="menu.html">Menu</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
