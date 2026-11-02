@@ -1,0 +1,74 @@
+/* =========================================================
+   PART 3 ADDITIONS — paste at the END of css/style.css
+   ========================================================= */
+
+/* ---- Forms: select, errors, status ---- */
+.form-field select {
+  font-family: inherit;
+  font-size: 1rem;
+  padding: 0.6rem 0.75rem;
+  border: 1px solid var(--color-line);
+  background-color: var(--color-ivory);
+  color: var(--color-espresso);
+}
+.form-field select:focus-visible { outline: 3px solid var(--color-paprika); outline-offset: 3px; border-color: var(--color-paprika); }
+.form-field [aria-invalid="true"] { border-color: var(--color-paprika); background-color: #fbeae6; }
+.field-error { color: #a53823; font-size: 0.875rem; font-weight: 500; min-height: 1.2em; }
+.form-status { margin-top: var(--space-2); padding: var(--space-2); border-left: 4px solid var(--color-sage); background: var(--color-ivory-dim); }
+.form-status:empty { display: none; }
+.form-status.is-error { border-left-color: var(--color-paprika); }
+.form-hint { font-size: 0.85rem; color: #4a3a29; }
+
+/* ---- Accordion (animated with CSS grid rows) ---- */
+.accordion { border-top: 1px solid var(--color-line); max-width: 48rem; }
+.acc-item { border-bottom: 1px solid var(--color-line); }
+.acc-btn {
+  width: 100%; display: flex; justify-content: space-between; align-items: center; gap: var(--space-2);
+  background: none; border: none; text-align: left; padding: var(--space-2) 0;
+  font-family: var(--font-display); font-size: var(--step-1); color: var(--color-espresso);
+}
+.acc-btn::after { content: "+"; font-size: 1.5rem; color: var(--color-paprika); transition: transform 0.25s ease; }
+.acc-btn[aria-expanded="true"]::after { transform: rotate(45deg); }
+.acc-panel { display: grid; grid-template-rows: 0fr; transition: grid-template-rows 0.3s ease; }
+.acc-panel > div { overflow: hidden; }
+.acc-panel.is-open { grid-template-rows: 1fr; }
+
+/* ---- Modal (<dialog>) ---- */
+dialog.modal {
+  margin: auto; border: 1px solid var(--color-line); background: var(--color-ivory);
+  color: var(--color-espresso); padding: var(--space-4); width: min(32rem, 92vw);
+}
+dialog.modal::backdrop { background: rgba(43, 30, 20, 0.6); }
+dialog.modal[open] { animation: pop-in 0.25s ease; }
+@keyframes pop-in { from { opacity: 0; transform: translateY(12px) scale(0.98); } to { opacity: 1; transform: none; } }
+.modal-actions { display: flex; gap: var(--space-2); margin-top: var(--space-3); flex-wrap: wrap; }
+
+/* ---- Gallery lightbox ---- */
+.gallery-grid img { cursor: zoom-in; transition: transform 0.3s ease; }
+.gallery-grid figure:hover img { transform: scale(1.04); }
+.lightbox {
+  position: fixed; inset: 0; z-index: 100; display: flex; align-items: center; justify-content: center;
+  background: rgba(43, 30, 20, 0.92); opacity: 0; visibility: hidden; transition: opacity 0.25s ease, visibility 0.25s;
+}
+.lightbox.is-open { opacity: 1; visibility: visible; }
+.lightbox figure { max-width: min(90vw, 70rem); text-align: center; }
+.lightbox img { max-height: 80vh; width: auto; margin-inline: auto; }
+.lightbox figcaption { color: var(--color-ivory); margin-top: var(--space-1); }
+.lb-btn {
+  position: absolute; background: var(--color-ivory); color: var(--color-espresso); border: none;
+  width: 3rem; height: 3rem; font-size: 1.5rem; border-radius: 50%;
+}
+.lb-btn:hover { background: var(--color-mustard); }
+.lb-close { top: 1rem; right: 1rem; }
+.lb-prev { left: 1rem; top: 50%; }
+.lb-next { right: 1rem; top: 50%; }
+
+/* ---- One orchestrated page-load moment: hero copy rises in ---- */
+.hero-copy > * { animation: rise 0.6s ease both; }
+.hero-copy > *:nth-child(2) { animation-delay: 0.08s; }
+.hero-copy > *:nth-child(3) { animation-delay: 0.16s; }
+.hero-copy > *:nth-child(4) { animation-delay: 0.24s; }
+@keyframes rise { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
+
+/* ---- Map (contact page) ---- */
+#map { height: 20rem; border: 1px solid var(--color-line); }
