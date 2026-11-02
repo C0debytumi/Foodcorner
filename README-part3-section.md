@@ -12,7 +12,7 @@
 
 ## Part 3 — Functionality, SEO and Deployment
 
-**Live site:** [PASTE YOUR NETLIFY / GITHUB PAGES LINK]
+**Live site:** [https://fluffy-elf-a8f6a0.netlify.app]
 
 ### JavaScript enhancements
 - **Accordion** (`js/enhancements.js`) — FAQ on `enquiry.html`. Buttons use `aria-expanded` / `aria-controls`; the panel opens with a CSS transition and only one answer is open at a time.
